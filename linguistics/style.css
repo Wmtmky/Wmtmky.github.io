@@ -1,0 +1,126 @@
+/*
+https://coolors.co/0b132b-b6465f-f0e6ef-81d6e3-b8bedd
+https://coolors.co/251f47-af3e4d-bdb4bf-fffd82-ffe66d
+F0E6EF background
+0B132B majnav
+251F47 majnav
+AF3E4D minnav
+B6465F minnav
+81D6E3 other
+B8BeDD other
+FFFD82 other
+FFE66D other
+BDB4BF grey
+*/
+
+/* @import url(//fonts.googleapis.com/earlyaccess/notosanscanadianaboriginal.css);
+font-family: 'Noto Sans Canadian Aboriginal', sans-serif; */
+
+body{
+	background-color: #F0E6EF;
+}
+
+header{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+nav{
+	display: grid;
+}
+
+/*
+nav > :hover{
+	border: 1px solid white;
+}
+*/
+
+nav div{
+	text-align: center;
+	height: 100%;
+}
+
+nav a{
+	display: block;
+	text-decoration: none;
+	color: white;
+}
+
+#majnav{
+	top: 0px;
+	background-color: #0B132B;
+	font-family: 'Roboto', sans-serif;
+	grid-template-columns: 300px 1fr 1fr 1fr;
+	grid-template-rows: 80px;
+	line-height: 80px;
+}
+
+#minnav{
+	top: 80px;
+	background-color: #AF3E4D;
+	font-family: 'Open Sans', sans-serif;
+	grid-template-columns: 200px 1fr 1fr 1fr;
+	grid-template-rows: 40px 1fr;
+	line-height: 40px;
+}
+
+#majnav > div:hover{
+	background-color: #251F47;
+}
+
+#minnav > div:hover{
+	background-color: #B6465F;
+}
+
+#majbox{
+	font-size: 36px;
+	font-style: italic;
+	text-align: left;
+	padding-left: 10px;
+	font-weight: bold;
+	background-color: #000000;
+}
+
+#majbox text{
+	font-size: 18px;
+}
+
+#minbox{
+	text-align: right;
+	padding-right: 5px;
+	font-weight: bold;
+	background-color: #a03040;
+}
+
+#dropnav{
+	height: auto;
+	background-color: rgba(0,0,0,0);
+	grid-template-columns: 200px 1fr 1fr 1fr;
+	z-index:-1
+}
+
+.dropdown{
+	flex-direction: column;
+}
+
+.dropdown div{
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+}
+
+.dropdown a{
+	padding-left: 10px;
+}
+
+.dropdown > div:hover{
+	background-color: #B6465F;
+}
+
+#dd1{
+	display: none;
+	background-color: #a03040;
+	font-family: 'Roboto', sans-serif;
+}
