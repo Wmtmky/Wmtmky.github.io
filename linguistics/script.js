@@ -7,6 +7,5 @@ function dropdown(id,boolean) {
 }
 
 function closeAlert(id) {
-	console.log("yes");
 	document.getElementById(id).style.display = "none";
 }
