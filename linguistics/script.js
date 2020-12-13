@@ -5,3 +5,8 @@ function dropdown(id,boolean) {
 		document.getElementById(id).style.display = "none";
 	}
 }
+
+function closeAlert(id) {
+	console.log("yes");
+	document.getElementById(id).style.display = "none";
+}

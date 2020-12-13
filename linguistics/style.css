@@ -18,6 +18,8 @@ font-family: 'Noto Sans Canadian Aboriginal', sans-serif; */
 
 body{
 	background-color: #F0E6EF;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0px;
 }
 
 header{
@@ -60,7 +62,6 @@ nav a{
 #minnav{
 	top: 80px;
 	background-color: #AF3E4D;
-	font-family: 'Open Sans', sans-serif;
 	grid-template-columns: 200px 1fr 1fr 1fr;
 	grid-template-rows: 40px 1fr;
 }
@@ -138,17 +139,47 @@ nav a{
 
 #smallscreen{
 	position: relative;
+	display: grid;
 	width: 80%;
 	height: auto;
 	min-height: 20px;
 	top: 10px;
 	left: 10%;
 	padding-top: 2px;
+	grid-template-columns: 1fr 20px;
 	background-color: #FFFFAA;
-	text-align: center;
 	font-family: sans-serif;
 	font-size: 14px;
 	border: 2px #EFCC00 solid;
+}
+
+#smallscreentext{
+	position: relative;
+	text-align: center;
+}
+
+#closeAlert{
+	display: block;
+	float: right;
+}
+
+article{
+	position: absolute;
+	top: 120px;
+	width: 100%;
+	font-size: 14px;
+	z-index: -1;
+}
+
+article div{
+	position: relative;
+	top: 30px;
+	margin-left: 30px;
+	margin-right: 30px;
+	background-color: #EEEEEE;
+	border: 1px #CCCCCC solid;
+	border-radius: 5px;
+	padding: 10px;
 }
 
 @media only screen and (min-width:700px){
