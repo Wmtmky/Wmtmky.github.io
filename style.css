@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=BenchNine:wght@700&display=swap');
+
+:root {
+	--bgMain: radial-gradient(farthest-corner at 50% 50%, #FFFF, #FFFD 10%, #FFF9 30%, #FFF4 60%, #FFF1 80%), conic-gradient(from 0deg at 50% 50%, #F28, #71C, #41B, #46F, #49F, #5DF, #5BF, #99F, #D6D, #F28);
+	--darkMode: hsl(0, 0%, 0%);
+	--lightMode: hsl(0, 0%, 100%);
+	--headline: 'BenchNine', 'Arial Narrow', sans-serif;
+	--cardSize: 25vh;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--darkMode);
+	transition: background-color 0.25s ease-out;
+}
+
+body::-webkit-scrollbar {
+	width: 1.5vh;
+	background-color: var(--darkMode);
+	z-index: 1;
+}
+
+body::-webkit-scrollbar-track {
+	margin: 5.25vh 0 0.25vh 0;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: #888;
+	border-radius: 0.75vh;
+	border-left: 0.375vh solid var(--darkMode);
+	border-right: 0.375vh solid var(--darkMode);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+	background-color: var(--lightMode);
+}
+
+div#background {
+	position: fixed;
+	background-color: #5BF;
+	background-image: var(--bgMain);
+	height: 100vh;
+	width: 100%;
+	z-index: -2;
+}
+
+nav {
+	display: flex;
+	position: fixed;
+	background-color: var(--darkMode);
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 5vh;
+	font-family: var(--headline);
+	z-index: 2;
+}
+
+nav a {
+	padding: 1.5vh 2.5vh;
+	margin-right: 0.25vh;
+	font-size: 2.5vh;
+	line-height: 2.5vh;
+	color: var(--lightMode);
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background-color ease-in 0.5s, color ease-out 0.5s, ease-in-out 0.5s;
+}
+
+nav a.current-page {
+	text-decoration: inherit;/*underline 0.25vh;*/
+}
+
+nav a:hover {
+	font-size: 2.7vh;
+	line-height: 2.6vh;
+	background-color: var(--lightMode);
+	color: var(--darkMode);
+}
+
+nav a#back-arrow {
+	padding: 0.5vh;
+	background-color: var(--lightMode);
+	transition: ease-out 0.25s;
+}
+
+nav a#back-arrow:hover {
+	padding: 0;
+}
+
+nav a#back-arrow svg {
+	height: 4vh;
+	width: 4vh;
+	transition: height ease-out 0.25s, width ease-out 0.25s, transform 0s;
+}
+
+nav a#back-arrow svg polygon {
+	fill: var(--darkMode);
+}
+
+nav a#back-arrow:hover svg {
+	height: 5vh;
+	width: 5vh;
+	transition: transform 0.5s ease-in-out 0.5s;
+	transform: rotateY(360deg);
+}
+
+nav div#lightswitch {
+	position: absolute;
+	right: 1vh;
+	height: 5vh;
+	padding: 0;
+}
+
+nav div#lightswitch svg {
+	height: 5vh;
+	width: 5vh;
+	transition: transform 0.25s ease-out 0.25s;
+}
+
+nav div#lightswitch:hover svg {
+	transform: rotate(180deg);
+}
+
+nav div#lightswitch svg circle {
+	fill: var(--lightMode);
+	stroke: none;
+}
+
+nav div#lightswitch svg line {
+	fill: none;
+	stroke: var(--lightMode);
+	stroke-width: 25;
+}
+
+div.height-constant {
+	height: 100vh;
+	z-index: -1;
+}
+
+main.hero {
+	display: flex;
+	height: 100vh;
+	background-image: linear-gradient(#0008, #0008);
+	padding: 7.5vh 2.5vh 2.5vh 2.5vh;
+	flex-direction: column;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	font-family: monospace;
+}
+
+main.hero h1 {
+	font-size: 5vh;
+	margin: 1vh;
+}
+
+main.hero h2 {
+	font-size: 2.5vh;
+	margin: 1vh;
+}
+
+main#projects {
+	display: grid;
+	left: 0;
+	width: 100%;
+	padding: 7.5vh 2.5vh 2.5vh 2.5vh;
+	grid-template-columns: repeat( auto-fill, minmax(var(--cardSize), 1fr) );
+	grid-template-rows: repeat( auto-fill, minmax(var(--cardSize), 1fr) );
+	grid-gap: 2.5vh;
+}
+
+main#projects div.card {
+	width: auto;
+	aspect-ratio: 1/1;
+	background-color: var(--lightMode);
+	color: var(--darkMode);
+	border-radius: 2.5vh;
+	overflow: auto;
+	transition: all ease-out 0.25s;
+}
+
+main#projects div.card::-webkit-scrollbar {
+	width: 1vh;
+}
+
+main#projects div.card::-webkit-scrollbar-track {
+	margin: 2.5vh 0.25vh;
+}
+
+main#projects div.card::-webkit-scrollbar-thumb {
+	background-color: #aaa;
+	border-radius: 0.5vh;
+	border-left: 0.25vh solid var(--lightMode);
+	border-right: 0.25vh solid var(--lightMode);
+	transition: background-color 0.25s ease-out;
+}
+
+main#projects div.card::-webkit-scrollbar-thumb:hover {
+	background-color: var(--darkMode);
+}
+
+main#projects div.card:hover {
+	transform: translate(-1.25vh, -1.25vh);
+	box-shadow: 1.25vh 1.25vh 0 var(--darkMode);
+	z-index: 1;
+}
+
+main#projects div.card h3 {
+	margin: 1.5vh 2.5vh;
+	font-family: var(--headline);
+	font-size: 4vh;
+	text-transform: uppercase;
+	border-bottom: 0.25vh solid var(--darkMode);
+}
+
+main#projects div.card p {
+	margin: 1.25vh 2.5vh 2.5vh 2.5vh;
+}
+
+@media screen and (min-width: 768px) {
+	:root {
+		--cardSize: 30vh;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	:root {
+		--cardSize: 35vh;
+	}
+}
