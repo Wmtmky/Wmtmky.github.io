@@ -17,18 +17,20 @@
     
 	</head>
 	
+	<!-- Page Content -->
 	<body onmousemove="dynamicBackground(event)">
 		<div id="background"></div>
 		<nav>
             <a href="index" id="back-arrow">
 				<svg viewbox="0 0 500 500">
+					<!-- not using paths thank you very much -->
 					<polygon points="100,250 250,100 250,150 167.68,232.32 382.32,232.32
 					382.32,267.68 167.68,267.68 250,350 250,400"></polygon>
 				</svg>
 			</a>
             <a id="nav-home" href="index">Home</a>
             <a id="nav-about" href="#">About</a>
-            <a id="nav-projects" href="#" class="current-page">Projects</a>
+            <a id="nav-projects" href="#projects" class="current-page">Projects</a>
 			<div onclick="lightswitch('inverse')" id="lightswitch">
 				<svg viewbox="0 0 500 500">
 					<circle class="lightswitch-icon" cx="250" cy="250" r="50"></circle>
@@ -45,10 +47,19 @@
         </nav>
 
 		<section class="hero">
-			<h1>Error 404</h1>
-			<h2>Page not found.</h2>
-			<h3>The page you are looking for may not exist yet, or may have been moved or deleted</h3>
+			<h1>Nothing Here</h1>
+			<h3>Come back later...</h3>
 		</section>
+
+		<section id="projects">
+			<div class="card">
+				<h3>Coming soon</h3>
+				<p>
+					Come back later...
+				</p>
+			</div>
+		</section>
+		<div class="height-constant"></div>
 
 	</body>
 </html>
