@@ -170,13 +170,18 @@ div.height-constant {
 	z-index: -1;
 }
 
+section {
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	padding: 7.5vh 2.5vh 2.5vh 2.5vh;
+}
+
 section.hero {
 	display: flex;
-	height: 100vh;
 	background-image: linear-gradient(#0008, #0008);
-	padding: 7.5vh 2.5vh 2.5vh 2.5vh;
-	flex-direction: column;
 	color: white;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	font-family: monospace;
@@ -197,11 +202,13 @@ section.hero h3 {
 	margin: 1vh;
 }
 
+section#about {
+	background-image: linear-gradient(#000C, #000C);
+}
+
 section#projects {
 	display: grid;
-	left: 0;
-	width: 100%;
-	padding: 7.5vh 2.5vh 2.5vh 2.5vh;
+	height: auto;
 	grid-template-columns: repeat( auto-fill, minmax(var(--cardSize), 1fr) );
 	grid-template-rows: repeat( auto-fill, minmax(var(--cardSize), 1fr) );
 	grid-gap: 2.5vh;
