@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+	<head>
+  
+		<meta charset="utf-8">
+		<meta name="description" content="Wmtmky, Final Grade Calculator, Wmtmarky">
+		<meta name="keywords" content="Wmtmky">
+		<meta name="author" content="Wmtmky, Final Grade Calculator, Wmtmarky">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+		<!--link rel="icon" type="image/png" href="files/favicon.png"-->
+		<link rel="stylesheet" href="style.css" defer>
+    
+		<script src="script.js" defer></script>
+    
+		<title>Final Grade Calculator | Wmtmarky</title>
+    
+	</head>
+	
+	<!-- Page Content -->
+	<body>
+		
+		<header>
+		
+			<h1>Final Grade Calculator</h1>
+		
+		</header>
+
+		<main>
+
+			<div class="grid-container">
+
+				<div class="grid-item">
+					<label>Current Grade: </label>
+					<input id="current-grade" type="number" onkeyup="calcFinal()"/>
+					<label>&percnt;</label>
+				</div>
+				
+				<div class="grid-item">
+					<label>Target Grade: </label>
+					<input id="target-grade" type="number" onkeyup="calcFinal()"/>
+					<label>&percnt;</label>
+				</div>
+
+			</div>
+
+			<div class="grid-container">
+
+				<div class="grid-item">
+					<label>Finals Weight: </label>
+					<input id="finals-weight" type="number" onkeyup="calcFinal()"/>
+					<label>&percnt;</label>
+				</div>
+				
+				<div class="grid-item">
+					<label>Mark Needed: </label>
+					<div id="mark-needed" type="number" onkeyup="calcFinal()">&percnt;</div>
+				</div>
+
+			</div>
+
+		</main>
+
+	</body>
+</html>

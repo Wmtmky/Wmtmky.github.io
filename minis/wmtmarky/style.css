@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
+
+:root {
+    --accent: #101042;
+    --bg: #f8f8ff;
+}
+
+body {
+    background-color: var(--accent);
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    top: 0;
+    left: 0;
+    height: 20vh;
+    width: 100%;
+    background-color: var(--accent);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+header h1 {
+    color: var(--bg);
+    text-align: center;
+    font-size: 5vh;
+    margin: 2.5vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+main {
+    min-height: 80vh;
+    width: 100%;
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+main div.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: end;
+    align-content: flex-start;
+    align-items: center;
+    grid-gap: 2vh;
+    width: calc(100% - 8vh);
+    margin: 4vh 4vh 0 4vh;
+}
+
+main div.grid-container div.grid-item {
+    height: fit-content;
+}
+
+main div.grid-container div.grid-item label {
+    font-size: 2vh;
+    line-height: 1vh;
+}
+
+main div.grid-container div.grid-item input[type=number], main div.grid-container div.grid-item div#mark-needed {
+    display: inline-block;
+    background-color: #1101;
+    border-radius: 10vh;
+    border: none;
+    width: 8vh;
+    font-size: 2.5vh;
+    padding: 1vh;
+}
+
+main div.grid-container div.grid-item div#mark-needed {
+    background-color: #1102;
+    width: auto;
+    min-width: 12vh;
+    font-size: 3vh;
+    text-align: right;
+}
+
+main div.grid-container input[type=number]:focus {
+    outline: none;
+}
+
+@media screen and (min-width: 768px) {
+    
+    main div.grid-container {
+        grid-template-columns: 1fr 1fr;
+        max-width: 60vh;
+    }
+
+}
