@@ -56,6 +56,8 @@ div#background {
 	z-index: -2;
 }
 
+/* NAVIGATION */
+
 nav {
 	display: flex;
 	position: fixed;
@@ -164,6 +166,8 @@ nav div#lightswitch svg line {
 	stroke: var(--lightMode);
 	stroke-width: 25;
 }
+
+/* CONTENT */
 
 div.height-constant {
 	height: 100vh;

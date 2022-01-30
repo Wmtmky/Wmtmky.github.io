@@ -41,6 +41,7 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    margin-top: 2vh;
 }
 
 main div.grid-container {
@@ -51,7 +52,10 @@ main div.grid-container {
     align-items: center;
     grid-gap: 2vh;
     width: calc(100% - 8vh);
-    margin: 4vh 4vh 0 4vh;
+    padding: 2vh;
+    margin: 2vh 4vh;
+    border: 2px solid var(--accent);
+    border-radius: 2.5vh;
 }
 
 main div.grid-container div.grid-item {
@@ -66,7 +70,7 @@ main div.grid-container div.grid-item label {
 main div.grid-container div.grid-item input[type=number], main div.grid-container div.grid-item div#mark-needed {
     display: inline-block;
     background-color: #1101;
-    border-radius: 10vh;
+    border-radius: 2.5vh;
     border: none;
     width: 8vh;
     font-size: 2.5vh;
