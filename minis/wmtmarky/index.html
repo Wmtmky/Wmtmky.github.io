@@ -32,26 +32,30 @@
 			<div class="grid-container">
 
 				<div class="grid-item">
-					<label>Current Grade: </label>
-					<input id="current-grade" type="number" onkeyup="calcFinal()"/>
+					<label for="previous-grade" title="Double click to select as target value" ondblclick="chooseTarget(this)">Previous Grade:</label>&nbsp;
+					<input id="previous-grade" class type="number" onkeyup="calcFinal(this.id)"/>
 					<label>&percnt;</label>
 				</div>
 				
 				<div class="grid-item">
-					<label>Target Grade: </label>
-					<input id="target-grade" type="number" onkeyup="calcFinal()"/>
+					<label for="new-grade" title="Double click to select as target value" ondblclick="chooseTarget(this)">New Grade:</label>&nbsp;
+					<input id="new-grade" class type="number" onkeyup="calcFinal(this.id)"/>
 					<label>&percnt;</label>
 				</div>
 
+				<hr>
+				<hr class="mobile-hidden">
+
 				<div class="grid-item">
-					<label>Finals Weight: </label>
-					<input id="finals-weight" type="number" onkeyup="calcFinal()"/>
+					<label for="finals-weight" title="Double click to select as target value" ondblclick="chooseTarget(this)">Finals Weight:</label>&nbsp;
+					<input id="finals-weight" class type="number" onkeyup="calcFinal(this.id)"/>
 					<label>&percnt;</label>
 				</div>
 				
 				<div class="grid-item">
-					<label>Mark Needed: </label>
-					<div id="mark-needed" type="number" onkeyup="calcFinal()">&percnt;</div>
+					<label for="finals-mark" title="Double click to select as target value" ondblclick="chooseTarget(this)">Finals Mark:</label>&nbsp;
+					<input id="finals-mark" class="target" type="number" onkeyup="calcFinal(this.id)"/>
+					<label>&percnt;</label>
 				</div>
 
 			</div>

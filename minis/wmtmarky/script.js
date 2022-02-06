@@ -1,16 +1,41 @@
+let target = "finals-mark";
+
+function chooseTarget(choice) {
+    choice = choice.getAttribute("for");
+    target = choice;
+    document.getElementsByClassName("target")[0].removeAttribute("disabled");
+    document.getElementsByClassName("target")[0].classList.remove("target");
+    document.getElementById(choice).setAttribute("disabled","true");
+    document.getElementById(choice).classList.add("target");
+    calcFinal();
+}
 
 function calcFinal() {
-    let cg = document.getElementById('current-grade');
-    let tg = document.getElementById('target-grade');
+    let pg = document.getElementById('previous-grade');
+    let ng = document.getElementById('new-grade');
     let fw = document.getElementById('finals-weight');
-    let mk = document.getElementById('mark-needed');
+    let fm = document.getElementById('finals-mark');
 
-    if (!isNumeric(cg.value) || !isNumeric(tg.value) || !isNumeric(fw.value)) return;
+    if (target == fm.id) {
+        if (!isNumeric(pg.value) || !isNumeric(ng.value) || !isNumeric(fw.value)) return;
+        fm.value = ( (ng.value - pg.value + (pg.value * fw.value / 100)) / (fw.value / 100) ).toFixed(3);
 
-    mk.innerHTML = ( (tg.value - cg.value + (cg.value * fw.value / 100)) / (fw.value / 100) ).toFixed(2) + "%";
+    } else if (target == ng.id) {
+        if (!isNumeric(pg.value) || !isNumeric(fw.value) || !isNumeric(fm.value)) return;
+        ng.value = ( pg.value - (pg.value * fw.value / 100) + (fm.value * fw.value / 100) ).toFixed(3);
+
+    } else if (target == pg.id) {
+        if (!isNumeric(ng.value) || !isNumeric(fw.value) || !isNumeric(fm.value)) return;
+        pg.value = ( (ng.value - (fm.value * fw.value / 100)) / (1 - (fw.value / 100)) ).toFixed(3);
+
+    } else if (target == fw.id) {
+        if (!isNumeric(pg.value) || !isNumeric(ng.value) || !isNumeric(fm.value)) return;
+        fw.value = ( 100 * (ng.value - pg.value) / (fm.value - pg.value) ).toFixed(3);
+        
+    }
 
 }
 
 function isNumeric (value) {
-    return /^-?\d+.?\d*$/.test(value);
+    return /(?!^0+$)^-?\d+.?\d*$/.test(value);
 }

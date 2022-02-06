@@ -12,6 +12,10 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.mobile-hidden {
+    display: none;
+}
+
 header {
     top: 0;
     left: 0;
@@ -62,14 +66,26 @@ main div.grid-container div.grid-item {
     height: fit-content;
 }
 
+hr {
+    position: relative;
+    left: -1vh;
+    width: calc(100% + 2vh);
+}
+
 main div.grid-container div.grid-item label {
     font-size: 2vh;
     line-height: 1vh;
 }
 
-main div.grid-container div.grid-item input[type=number], main div.grid-container div.grid-item div#mark-needed {
+main div.grid-container div.grid-item label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+main div.grid-container div.grid-item input[type=number] {
     display: inline-block;
     background-color: #1101;
+    color: var(--accent);
     border-radius: 2.5vh;
     border: none;
     width: 8vh;
@@ -77,12 +93,13 @@ main div.grid-container div.grid-item input[type=number], main div.grid-containe
     padding: 1vh;
 }
 
-main div.grid-container div.grid-item div#mark-needed {
+main div.grid-container div.grid-item input.target {
     background-color: #1102;
     width: auto;
-    min-width: 12vh;
+    width: 12vh;
     font-size: 3vh;
     text-align: right;
+    pointer-events: none;
 }
 
 main div.grid-container input[type=number]:focus {
@@ -90,10 +107,14 @@ main div.grid-container input[type=number]:focus {
 }
 
 @media screen and (min-width: 768px) {
+
+    .mobile-hidden {
+        display: block;
+    }
     
     main div.grid-container {
         grid-template-columns: 1fr 1fr;
-        max-width: 60vh;
+        max-width: 75vh;
     }
 
 }
