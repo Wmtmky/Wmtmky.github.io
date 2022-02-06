@@ -75,6 +75,7 @@ hr {
 main div.grid-container div.grid-item label {
     font-size: 2vh;
     line-height: 1vh;
+    user-select: none;
 }
 
 main div.grid-container div.grid-item label:hover {
