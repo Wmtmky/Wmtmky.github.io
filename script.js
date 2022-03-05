@@ -1,9 +1,9 @@
 window.onload = function () {
-
+    
+    setViewport();
+    adjustHeightConstant();
     getTheme();
     //localStorage.clear();
-
-    adjustHeightConstant();
 
 };
 
@@ -13,26 +13,32 @@ window.onresize = function () {
 
 };
 
+// maintain viewport height for soft keyboard on android
+function setViewport () {
+    var viewport = document.querySelector("meta[name=viewport]");
+    viewport.setAttribute("content", viewport.content + ", height = " + window.innerHeight);
+}
+
 function getTheme() {
 
-    let lightMode = localStorage.getItem('--lightMode');
-    let darkMode = localStorage.getItem('--darkMode');
+    let lightMode = localStorage.getItem('--home-lightMode');
+    let darkMode = localStorage.getItem('--home-darkMode');
 
-    if (lightMode != null && lightMode.includes("hsl")) setTheme('--lightMode', lightMode);
-    if (darkMode != null && darkMode.includes("hsl")) setTheme('--darkMode', darkMode);
+    if (lightMode != null && lightMode.includes("hsl")) setTheme('--home-lightMode', lightMode);
+    if (darkMode != null && darkMode.includes("hsl")) setTheme('--home-darkMode', darkMode);
 
 }
 
 function lightswitch() {
 
-    let lightMode = getComputedStyle(document.documentElement).getPropertyValue('--lightMode');
-    let darkMode = getComputedStyle(document.documentElement).getPropertyValue('--darkMode');
+    let lightMode = getComputedStyle(document.documentElement).getPropertyValue('--home-lightMode');
+    let darkMode = getComputedStyle(document.documentElement).getPropertyValue('--home-darkMode');
 
     if (lightMode.includes("hsl")) lightMode = invertHSL(lightMode.replaceAll(/[^0-9,]/g, "").split(","));
     if (darkMode.includes("hsl")) darkMode = invertHSL(darkMode.replaceAll(/[^0-9,]/g, "").split(","));
 
-    setTheme('--lightMode', lightMode);
-    setTheme('--darkMode', darkMode);
+    setTheme('--home-lightMode', lightMode);
+    setTheme('--home-darkMode', darkMode);
 
 }
 
@@ -64,7 +70,7 @@ document.onmousemove = function(e) {
     }, 8);
 };
 function dynamicBackground(event) {
-    let grad = getComputedStyle(document.documentElement).getPropertyValue('--bgMain');
+    let grad = getComputedStyle(document.documentElement).getPropertyValue('--home-bgMain');
     if (grad == null) return;
     if ((focusX > event.clientX - 10 && focusX < event.clientX + 10) || (focusY > event.clientY - 10 && focusY < event.clientY + 10)) return;
 
@@ -88,7 +94,7 @@ function dynamicBackground(event) {
 
     grad = "radial-gradient(farthest-corner at " + xPos + "% " + yPos + "%, #DDDF, #EEED 10%, #EEE9 30%, #FFF4 60%, #FFF1 80%), conic-gradient(from " + deg + "deg at " + xPos + "% " + yPos + "%, #F28, #71C, #52B, #46F, #49F, #5DF, #5BF, #99F, #D6D, #F28)";
 
-    setTheme('--bgMain', grad);
+    setTheme('--home-bgMain', grad);
 
 }
 
