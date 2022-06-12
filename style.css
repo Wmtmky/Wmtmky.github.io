@@ -6,6 +6,19 @@
 	--home-lightMode: hsl(0, 0%, 100%);
 	--home-headline: 'BenchNine', 'Arial Narrow', sans-serif;
 	--home-cardSize: 25vh;
+
+	--greyscale-offwhite: hsl(0, 0%, 95%);
+	--greyscale-lightest: hsl(0, 0%, 90%);
+	--greyscale-lighter: hsl(0, 0%, 85%);
+	--greyscale-light: hsl(0, 0%, 80%);
+	--greyscale-midlight: hsl(0, 0%, 75%);
+	/*--greyscale-light: hsl(0, 0%, 70%);
+	--greyscale-light: hsl(0, 0%, 65%);
+	--greyscale-light: hsl(0, 0%, 60%);
+	--greyscale-light: hsl(0, 0%, 55%);*/
+	--greyscale-middle: hsl(0, 0%, 50%);
+	--greyscale-middark: hsl(0, 0%, 25%);
+	--greyscale-dark: hsl(0, 0%, 20%);
 }
 
 * {
