@@ -2,23 +2,25 @@
 
 :root {
 	--home-bgMain: radial-gradient(farthest-corner at 50% 50%, #FFFF, #FFFD 10%, #FFF9 30%, #FFF4 60%, #FFF1 80%), conic-gradient(from 0deg at 50% 50%, #F28, #71C, #41B, #46F, #49F, #5DF, #5BF, #99F, #D6D, #F28);
-	--home-darkMode: hsl(0, 0%, 0%);
-	--home-lightMode: hsl(0, 0%, 100%);
+	--home-mainTheme: hsl(0, 0%, 100%);
+	--home-contrastTheme: hsl(0, 0%, 0%);
 	--home-headline: 'BenchNine', 'Arial Narrow', sans-serif;
 	--home-cardSize: 25vh;
 
+	/*
 	--greyscale-offwhite: hsl(0, 0%, 95%);
 	--greyscale-lightest: hsl(0, 0%, 90%);
 	--greyscale-lighter: hsl(0, 0%, 85%);
 	--greyscale-light: hsl(0, 0%, 80%);
 	--greyscale-midlight: hsl(0, 0%, 75%);
-	/*--greyscale-light: hsl(0, 0%, 70%);
+	*//*--greyscale-light: hsl(0, 0%, 70%);
 	--greyscale-light: hsl(0, 0%, 65%);
 	--greyscale-light: hsl(0, 0%, 60%);
-	--greyscale-light: hsl(0, 0%, 55%);*/
+	--greyscale-light: hsl(0, 0%, 55%);*//*
 	--greyscale-middle: hsl(0, 0%, 50%);
 	--greyscale-middark: hsl(0, 0%, 25%);
 	--greyscale-dark: hsl(0, 0%, 20%);
+	*/
 }
 
 * {
@@ -32,7 +34,7 @@ html {
 }
 
 body {
-	background-color: var(--home-darkMode);
+	background-color: var(--home-mainTheme);
 	-webkit-transition: background-color 0.25s ease-out;
 	-moz-transition: background-color 0.25s ease-out;
 	-o-transition: background-color 0.25s ease-out;
@@ -41,7 +43,7 @@ body {
 
 body::-webkit-scrollbar {
 	width: 1.5vh;
-	background-color: var(--home-darkMode);
+	background-color: var(--home-mainTheme);
 	z-index: 1;
 }
 
@@ -52,12 +54,12 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
 	background-color: #888;
 	border-radius: 0.75vh;
-	border-left: 0.375vh solid var(--home-darkMode);
-	border-right: 0.375vh solid var(--home-darkMode);
+	border-left: 0.375vh solid var(--home-mainTheme);
+	border-right: 0.375vh solid var(--home-mainTheme);
 }
 
 body::-webkit-scrollbar-thumb:hover {
-	background-color: var(--home-lightMode);
+	background-color: var(--home-contrastTheme);
 }
 
 div#background {
@@ -76,7 +78,7 @@ div#background {
 	nav {
 		display: flex;
 		position: fixed;
-		background-color: var(--home-darkMode);
+		background-color: var(--home-mainTheme);
 		top: 0;
 		left: 0;
 		width: 100vw;
@@ -94,7 +96,7 @@ div#background {
 		margin-right: 0.25vh;
 		font-size: 2.5vh;
 		line-height: 2.5vh;
-		color: var(--home-lightMode);
+		color: var(--home-contrastTheme);
 		text-decoration: none;
 		text-transform: uppercase;
 		-webkit-transition: background-color 0.5s, border 0.5s, color ease-out 0.5s, ease-in-out 0.5s;
@@ -110,14 +112,14 @@ div#background {
 	nav a:hover {
 		font-size: 2.7vh;
 		line-height: 2.6vh;
-		background-color: var(--home-lightMode);
-		color: var(--home-darkMode);
+		background-color: var(--home-contrastTheme);
+		color: var(--home-mainTheme);
 	}
 
 	nav a#back-arrow {
 		padding: 0.5vh;
 		border: none;
-		background-color: var(--home-lightMode);
+		background-color: var(--home-contrastTheme);
 		-webkit-transition: ease-out 0.25s;
 		-moz-transition: ease-out 0.25s;
 		-o-transition: ease-out 0.25s;
@@ -138,7 +140,7 @@ div#background {
 	}
 
 	nav a#back-arrow svg polygon {
-		fill: var(--home-darkMode);
+		fill: var(--home-mainTheme);
 	}
 
 	nav a#back-arrow:hover svg {
@@ -174,13 +176,13 @@ nav div#lightswitch:hover svg {
 }
 
 nav div#lightswitch svg circle {
-	fill: var(--home-lightMode);
+	fill: var(--home-contrastTheme);
 	stroke: none;
 }
 
 nav div#lightswitch svg line {
 	fill: none;
-	stroke: var(--home-lightMode);
+	stroke: var(--home-contrastTheme);
 	stroke-width: 25;
 }
 
@@ -238,8 +240,8 @@ section#projects {
 section#projects div.card {
 	width: auto;
 	aspect-ratio: 1/1;
-	background-color: var(--home-lightMode);
-	color: var(--home-darkMode);
+	background-color: var(--home-mainTheme);
+	color: var(--home-contrastTheme);
 	border-radius: 2.5vh;
 	overflow: auto;
 	-webkit-transition: all ease-out 0.25s;
@@ -259,8 +261,8 @@ section#projects div.card::-webkit-scrollbar-track {
 section#projects div.card::-webkit-scrollbar-thumb {
 	background-color: #aaa;
 	border-radius: 0.5vh;
-	border-left: 0.25vh solid var(--home-lightMode);
-	border-right: 0.25vh solid var(--home-lightMode);
+	border-left: 0.25vh solid var(--home-mainTheme);
+	border-right: 0.25vh solid var(--home-mainTheme);
 	-webkit-transition: background-color 0.25s ease-out;
 	-moz-transition: background-color 0.25s ease-out;
 	-o-transition: background-color 0.25s ease-out;
@@ -268,12 +270,12 @@ section#projects div.card::-webkit-scrollbar-thumb {
 }
 
 section#projects div.card::-webkit-scrollbar-thumb:hover {
-	background-color: var(--home-darkMode);
+	background-color: var(--home-contrastTheme);
 }
 
 section#projects div.card:hover {
 	transform: translate(-1.25vh, -1.25vh);
-	box-shadow: 1.25vh 1.25vh 0 var(--home-darkMode);
+	box-shadow: 1.25vh 1.25vh 0 var(--home-contrastTheme);
 	z-index: 1;
 }
 
@@ -282,7 +284,7 @@ section#projects div.card h3 {
 	font-family: var(--home-headline);
 	font-size: 4vh;
 	text-transform: uppercase;
-	border-bottom: 0.25vh solid var(--home-darkMode);
+	border-bottom: 0.25vh solid var(--home-contrastTheme);
 }
 
 section#projects div.card p {

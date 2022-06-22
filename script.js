@@ -19,26 +19,27 @@ function setViewport () {
     viewport.setAttribute("content", viewport.content + ", height = " + window.innerHeight);
 }
 
+//gets theme from local storage
 function getTheme() {
 
-    let lightMode = localStorage.getItem('--home-lightMode');
-    let darkMode = localStorage.getItem('--home-darkMode');
+    let mainTheme = localStorage.getItem('--home-mainTheme');
+    let contrastTheme = localStorage.getItem('--home-contrastTheme');
 
-    if (lightMode != null && lightMode.includes("hsl")) setTheme('--home-lightMode', lightMode);
-    if (darkMode != null && darkMode.includes("hsl")) setTheme('--home-darkMode', darkMode);
+    if (mainTheme != null && mainTheme.includes("hsl")) locallyStore('--home-mainTheme', mainTheme);
+    if (contrastTheme != null && contrastTheme.includes("hsl")) locallyStore('--home-contrastTheme', contrastTheme);
 
 }
 
 function lightswitch() {
 
-    let lightMode = getComputedStyle(document.documentElement).getPropertyValue('--home-lightMode');
-    let darkMode = getComputedStyle(document.documentElement).getPropertyValue('--home-darkMode');
+    let mainTheme = getComputedStyle(document.documentElement).getPropertyValue('--home-mainTheme');
+    let contrastTheme = getComputedStyle(document.documentElement).getPropertyValue('--home-contrastTheme');
 
-    if (lightMode.includes("hsl")) lightMode = invertHSL(lightMode.replaceAll(/[^0-9,]/g, "").split(","));
-    if (darkMode.includes("hsl")) darkMode = invertHSL(darkMode.replaceAll(/[^0-9,]/g, "").split(","));
+    if (mainTheme.includes("hsl")) mainTheme = invertHSL(mainTheme.replaceAll(/[^0-9,]/g, "").split(","));
+    if (contrastTheme.includes("hsl")) contrastTheme = invertHSL(contrastTheme.replaceAll(/[^0-9,]/g, "").split(","));
 
-    setTheme('--home-lightMode', lightMode);
-    setTheme('--home-darkMode', darkMode);
+    locallyStore('--home-mainTheme', mainTheme);
+    locallyStore('--home-contrastTheme', contrastTheme);
 
 }
 
@@ -51,7 +52,7 @@ function invertHSL(HSL) {
 
 }
 
-function setTheme(value, property) {
+function locallyStore(value, property) {
 
     //console.log(value + ", " + property);
     document.documentElement.style.setProperty(value, property);
@@ -59,6 +60,8 @@ function setTheme(value, property) {
 
 }
 
+
+//dynamic background
 let focusX;
 let focusY;
 let dynBgInterval = setInterval(function(){});
@@ -67,10 +70,10 @@ document.onmousemove = function(e) {
     dynamicBackground(e);
     dynBgInterval = setInterval(function(){
         dynamicBackground(e);
-    }, 8);
+    }, 8); //125 fps
 };
 function dynamicBackground(event) {
-    let grad = getComputedStyle(document.documentElement).getPropertyValue('--home-bgMain');
+    let grad = getComputedStyle(document.documentElement).getPropertyValue('--home-bgMain'); //gradient
     if (grad == null) return;
     if ((focusX > event.clientX - 10 && focusX < event.clientX + 10) || (focusY > event.clientY - 10 && focusY < event.clientY + 10)) return;
 
@@ -94,7 +97,7 @@ function dynamicBackground(event) {
 
     grad = "radial-gradient(farthest-corner at " + xPos + "% " + yPos + "%, #DDDF, #EEED 10%, #EEE9 30%, #FFF4 60%, #FFF1 80%), conic-gradient(from " + deg + "deg at " + xPos + "% " + yPos + "%, #F28, #71C, #52B, #46F, #49F, #5DF, #5BF, #99F, #D6D, #F28)";
 
-    setTheme('--home-bgMain', grad);
+    locallyStore('--home-bgMain', grad);
 
 }
 
