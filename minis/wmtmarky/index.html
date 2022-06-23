@@ -23,13 +23,13 @@
 		
 		<header>
 		
-			<h1>Final Grade Calculator</h1>
+			<h1 id="mode-title" ondblclick="eventModeSwitch()">Final Grade Calculator</h1>
 		
 		</header>
 
 		<main>
 
-			<div class="grid-container">
+			<div id="grade-calculator" class="grid-container">
 
 				<div class="grid-item">
 					<label for="previous-grade" title="Double click to select as target value" ondblclick="chooseTarget(this)">Previous Grade:</label>&nbsp;
@@ -55,6 +55,25 @@
 				<div class="grid-item">
 					<label for="finals-mark" title="Double click to select as target value" ondblclick="chooseTarget(this)">Finals Mark:</label>&nbsp;
 					<input id="finals-mark" class="target" type="number" onkeyup="calcFinal(this.id)"/>
+					<label>&percnt;</label>
+				</div>
+
+			</div>
+
+			<div id="wpa" class="grid-container hidden">
+
+				<div class="grid-item">
+					<label>Resulting WPA:&nbsp;</label>
+					<input id="wpa-result" type="number">
+					<span>
+						<div id="wpa-add" onclick="WPAadd()">&#10133;</div>
+						<div id="wpa-remove" onclick="WPAremove()">&#10134;</div>
+					</span>
+				</div>
+
+				<div class="grid-item">
+					<input class="wpa-course" type="text" placeholder="Course Name (optional)">&nbsp;
+					<input class="wpa-grade" type="number" onkeyup="calcWPAresult()">
 					<label>&percnt;</label>
 				</div>
 

@@ -1,3 +1,26 @@
+//Settings
+
+let mode = "grade-calculator";
+function eventModeSwitch() {
+    switch (mode) {
+        case "grade-calculator":
+            switchMode("wpa", 160, "WPA Calculator"); break;
+        case "wpa": //fallthrough
+        default:
+            switchMode("grade-calculator", 240, "Final Grade Calculator");
+    }
+}
+
+function switchMode(newMode, hue, modeTitle){
+    document.getElementById(mode).classList.add("hidden");
+    mode = newMode;
+    document.getElementById(mode).classList.remove("hidden");
+    document.documentElement.style.setProperty("--hue", hue);
+    document.getElementById("mode-title").innerHTML = modeTitle;
+}
+
+/* Grade Calculator */
+
 let target = "finals-mark";
 
 function chooseTarget(choice) {
@@ -38,4 +61,46 @@ function calcFinal() {
 
 function isNumeric (value) {
     return /(?!^0+$)^-?\d+.?\d*$/.test(value);
+}
+
+/* WPA Calculator */
+
+function calcWPAresult(activeInput) {
+
+    let resultingWPA = 0;
+    let WPAgradeArray = document.getElementsByClassName("wpa-grade")
+
+    for(let WPAgradeElem of WPAgradeArray) {
+        resultingWPA += WPAgradeElem.value - 100;
+    }
+
+    document.getElementById("wpa-result").value = (resultingWPA / WPAgradeArray.length).toFixed(3);
+
+}
+
+function WPAadd() {
+    let gridItem = document.createElement("div")
+    gridItem.setAttribute("class","grid-item");
+
+    let courseInput = document.createElement("input");
+    courseInput.setAttribute("class","wpa-course")
+    courseInput.setAttribute("placeholder","Course Name (optional)");
+
+    let gradeInput = document.createElement("input");
+    gradeInput.setAttribute("class","wpa-grade");
+    gradeInput.setAttribute("type","number");
+    gradeInput.setAttribute("onkeyup","calcWPAresult()");
+
+    gridItem.appendChild(courseInput);
+    gridItem.innerHTML += "&nbsp; ";
+    gridItem.appendChild(gradeInput);
+    gridItem.innerHTML += " <label>&percnt;</label>";
+    //gridItem.appendChild(.setAttribute("class","wpa-course"))
+    //document.getElementById("wpa").innerHTML += '<div class="grid-item"><input class="wpa-course" type="text" placeholder="Course Name (optional)">&nbsp; <input class="wpa-grade" type="number" maxlength="3" onkeyup="calcWPAresult()"> <label>&percnt;</label></div>';
+    document.getElementById("wpa").appendChild(gridItem);
+}
+
+function WPAremove() {
+    let WPAgradeArray = document.getElementById("wpa");
+    if (WPAgradeArray.childElementCount > 2) WPAgradeArray.removeChild(WPAgradeArray.lastChild);
 }

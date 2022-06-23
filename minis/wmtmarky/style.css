@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
 
 :root {
-    --accent: #101042;
-    --bg: #f8f8ff;
+    --hue: 240deg;
+    --accent: hsl(var(--hue), 61%, 16%);
+    --bg: hsl(var(--hue), 100%, 99%);
 }
 
 body {
@@ -10,18 +11,20 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    transition: all 0.5s;
 }
 
-.mobile-hidden {
+.mobile-hidden, main div.grid-container.hidden {
     display: none;
 }
+
+/* Grade */
 
 header {
     top: 0;
     left: 0;
     height: 20vh;
     width: 100%;
-    background-color: var(--accent);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -35,10 +38,12 @@ header h1 {
     margin: 2.5vh;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
+    user-select: none;
+    cursor: pointer;
 }
 
 main {
-    min-height: 80vh;
+    min-height: 78vh;
     width: 100%;
     background-color: var(--bg);
     display: flex;
@@ -94,7 +99,7 @@ main div.grid-container div.grid-item input[type=number] {
     padding: 1vh;
 }
 
-main div.grid-container div.grid-item input.target {
+main div.grid-container div.grid-item input.target, main div.grid-container div.grid-item input#wpa-result {
     background-color: #1102;
     width: auto;
     width: 12vh;
@@ -107,6 +112,47 @@ main div.grid-container input[type=number]:focus {
     outline: none;
 }
 
+/* WPA */
+
+main div#wpa div.grid-item input.wpa-course {
+    display: inline-block;
+    background-color: #1101;
+    color: var(--accent);
+    border-radius: 2.5vh;
+    border: none;
+    min-width: 8vh;
+    max-width: fit-content;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vh;
+    padding: 1.25vh;
+}
+
+main div#wpa div.grid-item div#wpa-add, main div#wpa div.grid-item div#wpa-remove {
+    display: inline-block;
+    background-color: #1101;
+    color: var(--accent);
+    border-radius: 2.5vh 0 0 2.5vh;
+    width: 2.5vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vh;
+    padding: 1.25vh;
+    margin: 0 0 0 2.5vh;
+    text-align: left;
+    user-select: none;
+}
+
+main div#wpa div.grid-item div#wpa-remove {
+    border-radius: 0 2.5vh 2.5vh 0;
+    margin: 0 2.5vh 0 0;
+    text-align: right;
+}
+
+main div#wpa div.grid-item input.wpa-grade {
+    width: 6vh;
+}
+
+/* DESKTOP */
+
 @media screen and (min-width: 768px) {
 
     .mobile-hidden {
@@ -116,6 +162,11 @@ main div.grid-container input[type=number]:focus {
     main div.grid-container {
         grid-template-columns: 1fr 1fr;
         max-width: 75vh;
+    }
+
+    main div#wpa {
+        grid-template-columns: 1fr;
+        max-width: 50vh;
     }
 
 }
