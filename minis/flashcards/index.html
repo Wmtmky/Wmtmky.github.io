@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Wmtmky">
+        <meta name="keywords" content="Wmtmky">
+        <meta name="author" content="Wmtmky">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!--link rel="icon" type="image/png" href="files/favicon.png"-->
+        <link rel="stylesheet" href="style.css">
+    
+        <script src="script.js" defer></script>
+    
+        <title>Flashcards</title>
+    
+    </head>
+    
+    <!-- Page Content -->
+    <body>
+
+        <nav>
+            <div id="load" class="selected-header" onclick="toggleHeader('load')">Load</div>
+            <div id="view" class onclick="toggleHeader('view')">View</div>
+            <div id="edit" class onclick="toggleHeader('edit')">Edit</div>
+        </nav>
+
+        <header>
+            <div id="load-options" class>
+                <input id="load-file" type="file">
+                <label id="load-file-text" for="load-file">No file loaded</label>
+            </div>
+
+            <div id="view-options" class="hidden">
+                <label>Side </label>
+                <button onclick="changeSide('left')">&#x1f81c;</button>
+                <span id="side-number" contenteditable>0</span>
+                <button onclick="changeSide('right')">&#x1f81e;</button>
+                <label> of </label>
+                <span id="side-total">0</span>
+                <label> on Card </label>
+                <button onclick="changeCard('left')">&#x1f81c;</button>
+                <span id="card-number" contenteditable>0</span>
+                <button onclick="changeCard('right')">&#x1f81e;</button>
+                <label> of </label>
+                <span id="card-total">0</span>
+            </div>
+
+            <div id="edit-options" class="hidden">
+                <div>Coming Soon</div>
+            </div>
+        </header>
+
+        <main>
+            <div id="card" onclick="changeSide()">
+                <h1>Load a flashcard deck</h1>
+                <h2>by importing a previously made flashcard json file from your hard drive</h2>
+            </div>
+        </main>
+
+    </body>
+</html>

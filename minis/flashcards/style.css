@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    font-family: 'Open Sans';
+    background-color: hsl(50deg, 25%, 95%);
+}
+
+nav {
+    height: 7.5vh;
+    width: 100vw;
+    background-color: hsl(50deg, 15%, 85%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+nav > div.selected-header {
+    text-decoration: underline solid 2px;
+}
+
+nav > div:hover {
+    opacity: 0.75;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+header {
+    height: 7.5vh;
+    width: 100vw;
+    background-color: hsl(50deg, 25%, 75%);
+    position: absolute;
+    left: 0;
+    top: 7.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    text-align: center;
+}
+
+header div.hidden {
+    display: none;
+}
+
+header div#load-options input[type=file] {
+    max-width: 180px;
+}
+
+header div#view-options span {
+    background-color: hsl(50deg, 15%, 85%);
+    border: none;
+    border-radius: 1vh;
+    height: 4vh;
+    min-width: 3vh;
+    padding: 1vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+header div#view-options span:focus {
+    outline: none;
+}
+
+header div#view-options button {
+    background-color: inherit;
+    border: none;
+    font-size: 3vh;
+    padding: 0;
+}
+
+main {
+    position: absolute;
+    top: 15vh;
+    left: 0;
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+main div#card {
+    display: block;
+    background-color: white;
+    border-radius: calc( min(100vw - 10vh, 75vh * 3 / 4) / 10 );
+    box-shadow: 2.5vh 2.5vh 5vh 2.5vh hsla(50deg, 10%, 50%, 50%);
+    box-sizing: border-box;
+    padding: 2.5vh;
+    margin: 5vh;
+    height: min(75vh, 4 / 3 * (100vw - 10vh));
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+main div#card * {
+    max-width: 100%;
+}
+
+main div#card .h0 {
+    font-size: 10vh;
+}
