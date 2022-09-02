@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=BenchNine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BenchNine:wght@700&family=Merriweather:wght@300&display=swap');
 
 :root {
 	--home-bgMain: radial-gradient(farthest-corner at 50% 50%, #FFFF, #FFFD 10%, #FFF9 30%, #FFF4 60%, #FFF1 80%), conic-gradient(from 0deg at 50% 50%, #F28, #71C, #41B, #46F, #49F, #5DF, #5BF, #99F, #D6D, #F28);
 	--home-mainTheme: hsl(0, 0%, 100%);
 	--home-contrastTheme: hsl(0, 0%, 0%);
 	--home-headline: 'BenchNine', 'Arial Narrow', sans-serif;
+	--home-body-text: 'Merriweather', serif;
 	--home-cardSize: 25vh;
 
 	/*
@@ -242,6 +243,7 @@ section#projects div.card {
 	aspect-ratio: 1/1;
 	background-color: var(--home-mainTheme);
 	color: var(--home-contrastTheme);
+	font-family: var(--home-body-text);
 	border-radius: 2.5vh;
 	overflow: auto;
 	-webkit-transition: all ease-out 0.25s;
@@ -288,7 +290,13 @@ section#projects div.card h3 {
 }
 
 section#projects div.card p {
-	margin: 1.25vh 2.5vh 2.5vh 2.5vh;
+	margin: 2.5vh;
+	margin-top: 1.25vh;
+}
+
+section#projects div.card a {
+	margin: 2.5vh;
+	color: #49F;
 }
 
 @media screen and (min-width: 768px) {
