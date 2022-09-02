@@ -5,7 +5,7 @@
 	--home-mainTheme: hsl(0, 0%, 100%);
 	--home-contrastTheme: hsl(0, 0%, 0%);
 	--home-headline: 'BenchNine', 'Arial Narrow', sans-serif;
-	--home-body-text: 'Merriweather', serif;
+	--home-bodyText: 'Merriweather', serif;
 	--home-cardSize: 25vh;
 
 	/*
@@ -243,8 +243,9 @@ section#projects div.card {
 	aspect-ratio: 1/1;
 	background-color: var(--home-mainTheme);
 	color: var(--home-contrastTheme);
-	font-family: var(--home-body-text);
+	font-family: var(--home-bodyText);
 	border-radius: 2.5vh;
+	padding-bottom: 2.5vh;
 	overflow: auto;
 	-webkit-transition: all ease-out 0.25s;
 	-moz-transition: all ease-out 0.25s;
