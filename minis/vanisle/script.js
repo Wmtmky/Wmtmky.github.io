@@ -25,11 +25,11 @@ function toggleColour(e) {
 let tooltip = document.getElementById('tooltip');
 function showTooltip(e) {
     if(e.target.tagName !== "circle"){
-        tooltip.style.opacity = 0;
+        tooltip.style.visibility = 'hidden';
         return;
     }
     tooltip.innerText = e.target.dataset.tooltip;
-    tooltip.style.opacity = 1;
-    tooltip.style.top = (e.clientY - 10) + "px";
-    tooltip.style.left = (e.clientX + 20) + "px";
+    tooltip.style.visibility = 'visible';
+    tooltip.style.top = (e.pageY - 10) + "px";
+    tooltip.style.left = (e.pageX + 20) + "px";
 }
