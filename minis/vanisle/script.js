@@ -1,12 +1,14 @@
 document.onload = scrollMap();
 
 function scrollMap() {
-    document.querySelector('section').scrollTo(4000, 4000)
+    var section = document.querySelector('section')
+    section.scrollTo(section.scrollWidth, section.scrollHeight)
 }
 
-document.querySelector('svg').addEventListener('click', toggleColour)
-document.querySelector('svg').addEventListener('touchend', toggleColour)
-document.querySelector('svg').addEventListener('mousemove', showTooltip)
+var svgmap = document.querySelector('svg')
+svgmap.addEventListener('click', toggleColour)
+svgmap.addEventListener('touchend', toggleColour)
+svgmap.addEventListener('mousemove', showTooltip)
 
 function toggleColour(e) {
     if(e.target.tagName !== "circle") return;
@@ -23,11 +25,11 @@ function toggleColour(e) {
 let tooltip = document.getElementById('tooltip');
 function showTooltip(e) {
     if(e.target.tagName !== "circle"){
-        tooltip.style.display = 'none';
+        tooltip.style.opacity = 0;
         return;
     }
     tooltip.innerText = e.target.dataset.tooltip;
-    tooltip.style.display = 'block';
+    tooltip.style.opacity = 1;
     tooltip.style.top = (e.clientY - 10) + "px";
     tooltip.style.left = (e.clientX + 20) + "px";
 }
