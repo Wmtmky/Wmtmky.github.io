@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap');
+
+:root{
+    --hero-back: linear-gradient(225deg,#2d3b86,#131339);
+    --green-acc: #66a329;
+    --off-white: #e8e8e8;
+}
+
+*{
+    font-family: 'Titillium Web', sans-serif;
+    border: none;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: var(--off-white);
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40vh;
+    margin: 0;
+    padding: 10px;
+    background-image: var(--hero-back);
+    font-size: 6vh;
+    font-style: italic;
+    text-align: center;
+    color: #f0f0f0;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    margin: 3vh auto;
+    padding: 1vh 2vh;
+    background-color: var(--green-acc);
+    border-radius: 3vh;
+    font-size: 3vh;
+    font-weight: 600;
+    font-style: italic;
+    color: #f0f0f0;
+    transition: background-color 0.25s;
+}
+
+button:hover{
+    background-color: #467e2a;
+}
+
+input{
+    height: 4vh;
+    width: 50px;
+    margin: 0 1vh;
+    padding-left: 1vh;
+    border-radius: 1vh;
+    font-size: 2vh;
+    font-weight: 600;
+    color: #131339;
+}
+
+input:focus{
+    outline: none;
+}
+
+ol{
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 48vh;
+    margin: 0;
+    padding: 5vh 10vh;
+    background-color: #aca79d;
+    font-size: 2.5vh;
+    line-height: 1.5;
+}
+
+ol li::marker{
+    font-weight: bold;
+}
