@@ -1034,7 +1034,9 @@ function randomItem(itemArray) {
     return itemArray[Math.floor(Math.random() * itemArray.length)];
 }
 
-function generate() {
+function generate(e) {
+
+    if (e?.target.tagName == 'INPUT') return;
 
     let places = document.getElementById('places');
     places.replaceChildren();
