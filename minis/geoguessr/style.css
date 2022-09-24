@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap');
 
 :root{
+    --text-colour: #131339;
     --hero-back: linear-gradient(225deg,#2d3b86,#131339);
     --green-acc: #66a329;
+    --green-hov: #4a862d;
     --off-white: #e8e8e8;
+    --beige-acc: #c6c1b9;
 }
 
 *{
@@ -30,7 +33,7 @@ h1{
     font-size: 6vh;
     font-style: italic;
     text-align: center;
-    color: #f0f0f0;
+    color: var(--off-white);
 }
 
 button{
@@ -43,12 +46,12 @@ button{
     font-size: 3vh;
     font-weight: 600;
     font-style: italic;
-    color: #f0f0f0;
+    color: var(--off-white);
     transition: background-color 0.25s;
 }
 
 button:hover{
-    background-color: #467e2a;
+    background-color: var(--green-hov);
 }
 
 input{
@@ -59,7 +62,7 @@ input{
     border-radius: 1vh;
     font-size: 2vh;
     font-weight: 600;
-    color: #131339;
+    color: var(--text-colour);
 }
 
 input:focus{
@@ -72,7 +75,7 @@ ol{
     min-height: 48vh;
     margin: 0;
     padding: 5vh 10vh;
-    background-color: #aca79d;
+    background-color: var(--beige-acc);
     font-size: 2.5vh;
     line-height: 1.5;
 }

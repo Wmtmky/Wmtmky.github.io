@@ -1037,34 +1037,38 @@ function randomItem(itemArray) {
 function generate(e) {
 
     if (e?.target.tagName == 'INPUT') return;
-
+    
     let places = document.getElementById('places');
     places.replaceChildren();
 
     for(let i = 0; i < document.querySelector('input').value; i++) {
         let listItem = document.createElement('li');
-        listItem.innerText = randomItem(zones) + " in ";
-        
-        let rand = Math.floor(Math.random() * 100);
-        let grouping;
-        switch(true) {
-            case(rand < 15): grouping = 0; break;
-            case(rand < 45): grouping = 1; break;
-            case(rand < 75): grouping = 2; break;
-            case(rand < 90): grouping = 3; break;
-            case(rand < 98): grouping = 4; break;
-            default: grouping = 5;
-        }
-
-        let country = randomItem(Object.keys(countries[grouping]));
-
-        let regions = countries[grouping][country];
-        if(regions) listItem.innerText += randomItem(regions) + ", ";
-
-        listItem.innerText += country;
-
+        listItem = choosePlace(listItem);
         places.appendChild(listItem);
     }
+}
+
+function choosePlace(listItem) {
+    listItem.innerText = randomItem(zones) + " in ";
+    
+    let rand = Math.floor(Math.random() * 100);
+    let grouping;
+    switch(true) {
+        case(rand < 15): grouping = 0; break;
+        case(rand < 45): grouping = 1; break;
+        case(rand < 75): grouping = 2; break;
+        case(rand < 90): grouping = 3; break;
+        case(rand < 98): grouping = 4; break;
+        default: grouping = 5;
+    }
+
+    let country = randomItem(Object.keys(countries[grouping]));
+    
+    let regions = countries[grouping][country];
+    if(regions) listItem.innerText += randomItem(regions) + ", ";
+
+    listItem.innerText += country;
+    return listItem;
 }
 
 document.onload = generate();
