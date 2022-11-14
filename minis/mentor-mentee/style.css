@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital@0;1&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Cabin', 'Helvetica', sans-serif;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'h  h '
+    's1 s2'
+    'a1 a1'
+    's3 s4'
+    'a2 a2';
+}
+
+header{
+    grid-area: h;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #eae8e1;
+}
+
+header h1{
+    margin: 1vh 0;
+    font-size: 3vh;
+}
+
+header h2{
+    margin: 0 0 1vh 0;
+    font-size: 2vh;
+    font-style: italic;
+}
+
+section#s1{
+    grid-area: s1;
+    padding-right: 3vh;
+}
+
+section#s2{
+    grid-area: s2;
+    padding-left: 3vh;
+}
+
+section{
+    width: 100%;
+    padding: 5vh;
+    box-sizing: border-box;
+}
+
+section > div.section-heading{
+    display: flex;
+    justify-content: space-between;
+}
+
+section > div.section-heading div{
+    font-size: 2vh;
+    padding: 1vh;
+}
+
+section textarea{
+    box-sizing: border-box;
+    height: 76vh;
+    width: 100%;
+    padding: 1vh;
+    font-family: 'Cabin', Helvetica, sans-serif;
+    font-size: 2vh;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+aside{
+    padding: 2vh 0;
+    text-align: center;
+    background-color: #eae8e1;
+    font-size: 2vh;
+}
+
+aside#a1{
+    grid-area: a1;
+}
+
+aside button{
+    margin-top: 1vh;
+    padding: 0.5vh 1vh;
+    font-size: 1.5vh;
+}
+
+.hidden1{
+    display: none;
+}
+
+section div.member{
+    display: flex;
+    flex-direction: column;
+}
+
+section div.member div::first-letter{
+    text-transform: capitalize;
+}
+
+section div.member ol{
+    margin-top: 0;
+}
+
+aside#a2{
+    grid-area: a2;
+}
