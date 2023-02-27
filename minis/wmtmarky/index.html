@@ -79,6 +79,163 @@
 
 			</div>
 
+			<div id="bc-ach-avg" class="grid-container hidden">
+
+				<div class="grid-item">
+					<p>The top 8000 students in BC (equal to the top ~13% of around 60000 Grade 12s) are awarded a <a target="_blank" href="https://www2.gov.bc.ca/gov/content/education-training/k-12/support/scholarships/provincial-scholarships/bc-achievement-scholarships">$1250 scholarship</a> voucher from the BC government. This is determined based on the BC Achievement Average, which is different from a student's overall GPA. Only the <a target="_blank" href="https://www2.gov.bc.ca/gov/content/education-training/k-12/administration/legislation-policy/public-schools/graduation-requirements">courses used to meet graduation requirements</a> are considered, with a student's English Studies 12 mark used in the event of a tie.</p>
+					<p>† To determine whether a course fits a graduation requirement, visit the Course Registry, select "2018 Graduation Program" followed by the "Graduation Program Requirement".</p>
+					<p>* To determine the allowed electives, select a "Course Type" of "Board Authority Authorized", "External Credit", or "Ministry". Remaining courses that would count as Graduation Program Requirements can go here (ie. if Physics 12 was used as a Science 11/12, Physics 11 can go here). Note that External Credit Courses often grant credit for two courses, meaning they can be counted twice.</p>
+					<p>When searching the <a target="_blank" href="http://www.bced.gov.bc.ca/datacollections/course_registry_web_search/advanced-search.php">Course Registry</a>, it is recommended to have the parameters "Course Status" set to "Open" and the "Instruction Language" set to "English".</p>
+				</div>
+
+				<div class="grid-item">
+					<label>BC Achievement Average:&nbsp;</label>
+					<input id="bc-ach-avg-result" type="number">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>A Language Arts 10:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="Lit, Composition, etc">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>A Language Arts 11:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="Lit, Creative Writing, etc">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>A Language Arts 12:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="English Studies 12, etc">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>A Social Studies 10:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="Social Studies 10, etc">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>A Social Studies 11/12:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="Geo, History, Law, etc">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>A Mathematics 10:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="FMPC, Workplace, etc">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>A Mathematics 11/12:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="(pre)Calc, CS, Stats, etc">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>A Science 10:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="Science 10, etc">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>A Science 11/12:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="Bio, Chem, Phys, Env, etc">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>Physical & Health Education 10:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="PHE 10">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>An Arts or ADST 10/11/12:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="Account, Dance, Food, etc">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>Career Life Education:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="CLE">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>Career Life Connections:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="CLC">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>Elective 1:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="See Elective Notes*">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>Elective 2:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="See Elective Notes*">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>Elective 3:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="See Elective Notes*">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>Elective 4:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="See Elective Notes*">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>Elective 5:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="See Elective Notes*">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>Elective 6:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="See Elective Notes*">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+				<div class="grid-item">
+					<label>Elective 7:&nbsp;</label>
+					<input class="bc-ach-avg-course" type="text" placeholder="See Elective Notes*">&nbsp;
+					<input class="bc-ach-avg-grade" type="number" onkeyup="bcachavg()">
+					<label>&percnt;</label>
+				</div>
+
+			</div>
+
 		</main>
 
 	</body>

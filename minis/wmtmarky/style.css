@@ -99,7 +99,7 @@ main div.grid-container div.grid-item input[type=number] {
     padding: 1vh;
 }
 
-main div.grid-container div.grid-item input.target, main div.grid-container div.grid-item input#wpa-result {
+main div.grid-container div.grid-item input:is(.target, #wpa-result, #bc-ach-avg-result) {
     background-color: #1102;
     width: auto;
     width: 12vh;
@@ -114,7 +114,7 @@ main div.grid-container input[type=number]:focus {
 
 /* WPA */
 
-main div#wpa div.grid-item input.wpa-course {
+main div.grid-container div.grid-item input[type=text] {
     display: inline-block;
     background-color: #1101;
     color: var(--accent);
@@ -151,6 +151,14 @@ main div#wpa div.grid-item input.wpa-grade {
     width: 6vh;
 }
 
+/* BC ACH AVG */
+
+main div.grid-container div.grid-item p {
+    font-size: 1.75vh;
+    line-height: 2.25vh;
+    margin: 0 0 1vh 0;
+}
+
 /* DESKTOP */
 
 @media screen and (min-width: 768px) {
@@ -167,6 +175,11 @@ main div#wpa div.grid-item input.wpa-grade {
     main div#wpa {
         grid-template-columns: 1fr;
         max-width: 50vh;
+    }
+
+    main div#bc-ach-avg {
+        grid-template-columns: 1fr;
+        max-width: 75vh;
     }
 
 }

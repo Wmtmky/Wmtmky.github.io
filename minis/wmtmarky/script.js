@@ -5,7 +5,9 @@ function eventModeSwitch() {
     switch (mode) {
         case "grade-calculator":
             switchMode("wpa", 160, "WPA Calculator"); break;
-        case "wpa": //fallthrough
+        case "wpa":
+            switchMode("bc-ach-avg", 0, "BC Achievement Average Calculator"); break;
+        case "bc-ach-avg": //fallthrough
         default:
             switchMode("grade-calculator", 240, "Final Grade Calculator");
     }
@@ -103,4 +105,19 @@ function WPAadd() {
 function WPAremove() {
     let WPAgradeArray = document.getElementById("wpa");
     if (WPAgradeArray.childElementCount > 2) WPAgradeArray.removeChild(WPAgradeArray.lastChild);
+}
+
+/* BC ACH AVG */
+
+function bcachavg(activeInput) {
+
+    let bcachAverage = 0;
+    let bcachavgArray = document.getElementsByClassName("bc-ach-avg-grade")
+
+    for(let bcachavgElem of bcachavgArray) {
+        bcachAverage += (+bcachavgElem.value);
+    }
+
+    document.getElementById("bc-ach-avg-result").value = (bcachAverage / bcachavgArray.length).toFixed(3);
+
 }
