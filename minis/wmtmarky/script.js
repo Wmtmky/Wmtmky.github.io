@@ -6,7 +6,7 @@ function eventModeSwitch() {
         case "grade-calculator":
             switchMode("wpa", 160, "WPA Calculator"); break;
         case "wpa":
-            switchMode("bc-ach-avg", 0, "BC Achievement Average Calculator"); break;
+            switchMode("bc-ach-avg", 10, "BC Achievement Average Calculator"); break;
         case "bc-ach-avg": //fallthrough
         default:
             switchMode("grade-calculator", 240, "Final Grade Calculator");
