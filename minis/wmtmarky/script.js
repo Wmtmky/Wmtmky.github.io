@@ -21,6 +21,22 @@ function switchMode(newMode, hue, modeTitle){
     document.getElementById("mode-title").innerHTML = modeTitle;
 }
 
+function redirectAnchor() {
+    let anchor = window.location.href.split('#')[1];
+    if (anchor == undefined) return;
+    switch (anchor) {
+    case "wpa":
+        switchMode("wpa", 160, "WPA Calculator"); break;
+    case "bc-ach-avg":
+        switchMode("bc-ach-avg", 10, "BC Achievement Average Calculator"); break;
+    case "grade-calculator": //fallthrough
+    default:
+        switchMode("grade-calculator", 240, "Final Grade Calculator");
+    }
+}
+
+window.onload = redirectAnchor();
+
 /* Grade Calculator */
 
 let target = "finals-mark";
