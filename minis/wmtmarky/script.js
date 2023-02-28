@@ -118,6 +118,6 @@ function bcachavg(activeInput) {
         bcachAverage += (+bcachavgElem.value);
     }
 
-    document.getElementById("bc-ach-avg-result").value = (bcachAverage / bcachavgArray.length).toFixed(3);
+    document.getElementById("bc-ach-avg-result").value = (bcachAverage / bcachavgArray.length).toFixed(2);
 
 }
