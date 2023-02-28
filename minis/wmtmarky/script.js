@@ -86,6 +86,7 @@ function WPAadd() {
 
     let courseInput = document.createElement("input");
     courseInput.setAttribute("class","wpa-course")
+    courseInput.setAttribute("type","text");
     courseInput.setAttribute("placeholder","Course Name (optional)");
 
     let gradeInput = document.createElement("input");
@@ -97,8 +98,6 @@ function WPAadd() {
     gridItem.innerHTML += "&nbsp; ";
     gridItem.appendChild(gradeInput);
     gridItem.innerHTML += " <label>&percnt;</label>";
-    //gridItem.appendChild(.setAttribute("class","wpa-course"))
-    //document.getElementById("wpa").innerHTML += '<div class="grid-item"><input class="wpa-course" type="text" placeholder="Course Name (optional)">&nbsp; <input class="wpa-grade" type="number" maxlength="3" onkeyup="calcWPAresult()"> <label>&percnt;</label></div>';
     document.getElementById("wpa").appendChild(gridItem);
 }
 

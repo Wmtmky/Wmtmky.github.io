@@ -159,6 +159,10 @@ main div.grid-container div.grid-item p {
     margin: 0 0 1vh 0;
 }
 
+main div#bc-ach-avg div.grid-item input.bc-ach-avg-grade {
+    width: 6vh;
+}
+
 /* DESKTOP */
 
 @media screen and (min-width: 768px) {
