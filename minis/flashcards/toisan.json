@@ -1,0 +1,61 @@
+[
+    [
+        [
+            "Good to eat",
+            "tasty, delicious"
+        ],
+        [
+            "<span class='h0'>好吃</span>",
+            "hōu-hëk"
+        ]
+    ],
+    [
+        [
+            "Good to drink",
+            "tasty, delicious"
+        ],
+        [
+            "<span class='h0'>好饮</span>",
+            "hōu-ngīm"
+        ]
+    ],
+    [
+        [
+            "Shrimp Dumplings",
+            "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Shrimp_dumplings.jpg/800px-Shrimp_dumplings.jpg'>"
+        ],
+        [
+            "<span class='h0'>虾饺<br>(蝦餃)</span>",
+            "hā-gāo"
+        ]
+    ],
+    [
+        [
+            "Open the door"
+        ],
+        [
+            "<span class='h0'>开门<br>(開門)</span>",
+            "höi-mõn"
+        ]
+    ],
+    [
+        [
+            "Close the door",
+            "Lock the door"
+        ],
+        [
+            "<span class='h0'>闩门<br>(閂門)</span>",
+            "sän-mõn"
+        ]
+    ],
+    [
+        [
+            "",
+            ""
+        ],
+        [
+            "",
+            ""
+        ]
+    ]
+]
